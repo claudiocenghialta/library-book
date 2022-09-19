@@ -22,6 +22,17 @@ class Book
     #[ORM\Column(nullable: true)]
     private ?int $pages = null;
 
+    public function __construct(
+        string $title,
+        string $author,
+        int $pages
+    )
+    {
+        $this->setTitle($title);
+        $this->setAuthor($author);
+        $this->setPages($pages);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
